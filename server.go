@@ -29,7 +29,7 @@ func main() {
 
 	r.Use(cors.New(config))
 
-	r.Run("localhost:" + port)
+	r.Run("0.0.0.0:" + port)
 }
 
 type FormSubmissionJSON struct {
