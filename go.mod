@@ -38,4 +38,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/johnforster/fitcurves v0.2.0 => ../fitcurves
+// replace github.com/johnforster/fitcurves v0.2.0 => ../fitcurves

@@ -18,6 +18,7 @@ func main() {
 	frontend_url := os.Getenv("FRONTEND_URL")
 	r := gin.Default()
 	r.LoadHTMLGlob("static/*")
+
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", gin.H{})
 	})
