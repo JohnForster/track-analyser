@@ -31,6 +31,8 @@ github.com/johnforster/fitcurves v0.1.0 h1:+0nwbncvhBOgSry261wTcpgsBMb32DQ/9+9EX
 github.com/johnforster/fitcurves v0.1.0/go.mod h1:NJbeyd8GjxbCV396s5LXeJHCyo403363cbirP+tSN+8=
 github.com/johnforster/fitcurves v0.1.1 h1:UYJvvraX/6wCKve/QNxy+6FMqpNFXClCyfcmp8Vk4Uo=
 github.com/johnforster/fitcurves v0.1.1/go.mod h1:NJbeyd8GjxbCV396s5LXeJHCyo403363cbirP+tSN+8=
+github.com/johnforster/fitcurves v0.2.0 h1:YZdl778UKz20xy6fAddd4AdiD2YE+iWR8FD8zBeZGUo=
+github.com/johnforster/fitcurves v0.2.0/go.mod h1:NJbeyd8GjxbCV396s5LXeJHCyo403363cbirP+tSN+8=
 github.com/json-iterator/go v1.1.12 h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
 github.com/json-iterator/go v1.1.12/go.mod h1:e30LSqwooZae/UwlEbR2852Gd8hjQvJoHmT4TnhNGBo=
 github.com/klauspost/cpuid/v2 v2.0.9/go.mod h1:FInQzS24/EEf25PyTYn52gqo7WaD8xa0213Md/qVLRg=
