@@ -18,7 +18,7 @@ func TestAnalyser(t *testing.T) {
 }
 
 func TestLookAround(t *testing.T) {
-	base := core.Coordinate{5, 5}
+	base := core.Coordinate{X: 5, Y: 5}
 	for c := range surroundingPixels(base, 1) {
 		fmt.Println(c)
 	}
@@ -50,7 +50,7 @@ func TestFindCentre(t *testing.T) {
 	tracks := AnalyseByFilePath("./test_data/find_centre.bmp")
 
 	result := findCentre(tracks[0])
-	expected := core.Coordinate{7, 5}
+	expected := core.Coordinate{X: 7, Y: 5}
 	if result != expected {
 		t.Errorf("Result was incorrect, got: %d, wanted: %d.", result, expected)
 	}
