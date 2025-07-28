@@ -8,7 +8,7 @@ import (
 )
 
 func TestAnalyser(t *testing.T) {
-	tracks := AnalyseByFilePath("./test_data/big_track.bmp")
+	tracks := AnalyseByFilePath("../test/test_data/big_track.bmp")
 	expected_size := 2
 	result := len(tracks)
 
@@ -25,7 +25,7 @@ func TestLookAround(t *testing.T) {
 }
 
 func TestCountRings(t *testing.T) {
-	tracks := AnalyseByFilePath("./test_data/big_track_six_rings.bmp")
+	tracks := AnalyseByFilePath("../test/test_data/big_track_six_rings.bmp")
 	expected_size := 6
 	result := len(tracks)
 
@@ -37,7 +37,7 @@ func TestCountRings(t *testing.T) {
 }
 
 func TestWithSinglePixelGaps(t *testing.T) {
-	tracks := AnalyseByFilePath("./test_data/small_with_gaps.bmp")
+	tracks := AnalyseByFilePath("../test/test_data/small_with_gaps.bmp")
 
 	result := len(tracks)
 	expected := 2
@@ -47,7 +47,7 @@ func TestWithSinglePixelGaps(t *testing.T) {
 }
 
 func TestFindCentre(t *testing.T) {
-	tracks := AnalyseByFilePath("./test_data/find_centre.bmp")
+	tracks := AnalyseByFilePath("../test/test_data/find_centre.bmp")
 
 	result := findCentre(tracks[0])
 	expected := core.Coordinate{X: 7, Y: 5}

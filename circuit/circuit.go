@@ -21,11 +21,13 @@ func NewCircuit(inner core.Track, outer core.Track) *Circuit {
 
 func TrackToBeziers(t core.Track) []fitcurves.Bezier {
 	points := []fitcurves.Point{}
+
 	for _, p := range t.ToList() {
 		points = append(points, fitcurves.NewPoint(float64(p.X), float64(p.Y)))
 	}
 
-	return fitcurves.FitCurves(points, 50.0)
+	tolerance := 2000.0
+	return fitcurves.FitCurves(points, tolerance)
 }
 
 type CircuitJSON struct {

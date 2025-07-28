@@ -17,17 +17,18 @@ func main() {
 	port := os.Getenv("PORT")
 	frontend_url := os.Getenv("FRONTEND_URL")
 	r := gin.Default()
+
+	config := cors.DefaultConfig()
+	config.AllowOrigins = []string{frontend_url}
+
+	r.Use(cors.New(config))
+
 	r.LoadHTMLGlob("static/*")
 
 	r.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.html", gin.H{})
 	})
 	r.POST("/tracks", postTracks)
-
-	config := cors.DefaultConfig()
-	config.AllowOrigins = []string{frontend_url}
-
-	r.Use(cors.New(config))
 
 	r.Run("0.0.0.0:" + port)
 }
@@ -62,13 +63,13 @@ func postTracks(c *gin.Context) {
 	tracks, err := track_analyser.GetTracksFromImage(image)
 
 	if err != nil {
-		fmt.Println("Error getting tracks from image")
+		fmt.Println("Error getting tracks from image", err.Error())
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
 	if len(tracks) != 2 {
-		fmt.Println("Error getting tracks from image")
+		fmt.Println("Incorrect number of tracks!")
 		c.JSON(http.StatusBadRequest, gin.H{"error": fmt.Sprintf("%v tracks found", len(tracks))})
 		return
 	}

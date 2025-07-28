@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg"></svg>
+    <script type="module">
+      const res = await fetch("./test_beziers.json");
+      let { inner, outer } = await res.json();
+      const svg = document.querySelector("svg");
+
+      const h = parseInt(svg.getAttribute("height"));
+      const w = parseInt(svg.getAttribute("width"));
+
+      inner.forEach((bez, i) => {
+        const path = createPath(bez, i);
+        svg.appendChild(path);
+      });
+
+      // outer.forEach((bez, i) => {
+      //   const path = createPath(bez, i);
+      //   svg.appendChild(path);
+      // });
+
+      function createPath(bez, i) {
+        const [p0, p1, p2, p3] = bez.map(
+          ([x, y]) => `${Math.round(x)} ${Math.round(y)}`
+        );
+        const d = `M ${p0} C ${p1}, ${p2}, ${p3}`;
+        const pathEl = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "path"
+        );
+        pathEl.setAttributeNS(null, "d", d);
+        pathEl.setAttributeNS(null, "stroke", i % 2 ? "blue" : "green");
+        pathEl.setAttributeNS(null, "fill", "transparent");
+
+        return pathEl;
+      }
+    </script>
+  </body>
+</html>
