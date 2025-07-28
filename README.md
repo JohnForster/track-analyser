@@ -6,6 +6,12 @@ bitmap images such as this:
 
 into a series of bezier curves, which are interpreted by the game.
 
+## Requirements
+
+This server requires OpenCV:
+
+`brew install opencv`
+
 ## Running the Server
 
 Running this server requires golang.
